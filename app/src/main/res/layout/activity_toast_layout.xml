@@ -17,9 +17,10 @@
             android:layout_marginTop="50dp"
             android:src="@drawable/default_icon"/>
         <TextView
+            android:id="@+id/tv_username"
             android:layout_width="match_parent"
             android:layout_height="45dp"
-            android:text="android"
+            android:textSize="28sp"
             android:gravity="center"/>
     </LinearLayout>
 
@@ -31,10 +32,11 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="姓名："
+            android:text="姓  名："
             android:textSize="30sp">
         </TextView>
         <EditText
+            android:id="@+id/et_realname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:maxLength="8">
@@ -48,10 +50,11 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="性别："
+            android:text="性   别："
             android:textSize="30sp">
         </TextView>
         <RadioGroup
+            android:id="@+id/group_sex"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -66,7 +69,7 @@
                 android:id="@+id/info_woman"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="30dp"
                 android:text="女"
                 android:textSize="30sp">
             </RadioButton>
