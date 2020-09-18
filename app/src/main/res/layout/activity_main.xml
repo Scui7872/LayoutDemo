@@ -6,43 +6,69 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity">
-    <ImageView
-        android:layout_gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="240dp"
-        android:src="@mipmap/ic_launcher_round"/>
 
-    <EditText
-        android:layout_margin="8dp"
-        android:id="@+id/et_name"
-        android:hint="请输入用户名"
+    <TextView
+        android:id="@+id/viewpager"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-    <EditText
-        android:layout_margin="8dp"
-        android:id="@+id/et_password"
-        android:hint="请输入密码"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
 
-    <Button
-        android:id="@+id/btn_login"
-        android:layout_width="14dp"
+    <RadioGroup
+        android:id="@+id/radiogroup"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="登录"
-        android:textSize="20sp" />
+        android:orientation="horizontal"
+      android:background="@mipmap/ic_navigate_bg">
 
-    <Button
-        android:id="@+id/btn_register"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="注册"
-        android:textSize="20sp" />
-</LinearLayout>
+        <RadioButton
+            android:id="@+id/tab1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:checked="true"
+            android:drawableTop="@mipmap/ic_course"
+            android:gravity="center"
+            android:paddingLeft="0dp"
+            android:text="课程"
+            android:textSize="18sp"/>
+
+        <RadioButton
+            android:id="@+id/tab2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@mipmap/ic_exercise"
+            android:gravity="center"
+            android:paddingLeft="0dp"
+            android:text="习题"
+            android:textSize="18sp"/>
+
+        <RadioButton
+            android:id="@+id/tab3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@mipmap/ic_message"
+            android:gravity="center"
+            android:paddingLeft="0dp"
+            android:text="资讯"
+            android:textSize="18sp"/>
+
+        <RadioButton
+            android:id="@+id/tab4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@mipmap/ic_my"
+            android:gravity="center"
+            android:paddingLeft="0dp"
+            android:text="我"
+            android:textSize="18sp"/>
+    </RadioGroup>
+
 </LinearLayout>
