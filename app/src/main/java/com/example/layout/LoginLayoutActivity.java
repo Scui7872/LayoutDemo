@@ -11,6 +11,8 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.Map;
+
 public class LoginLayoutActivity extends AppCompatActivity {
     //1.定义控件对象
     private EditText etUsername;
@@ -35,6 +37,11 @@ public class LoginLayoutActivity extends AppCompatActivity {
         etPassword = findViewById(R.id.tv_passwd);
         cbAutoLogin = findViewById(R.id.tv_auto);
         btnLogin = findViewById(R.id.tv_btn);
+        Map<String,String> data = SPUtil.getAll(this);
+        if(data.size() > 0) {
+            etUsername.setText(data.get("account"));
+            etPassword.setText(data.get("password"));
+        }
 
         //3. 设置按钮的监听器
         btnLogin.setOnClickListener(new View.OnClickListener(){
@@ -58,6 +65,13 @@ public class LoginLayoutActivity extends AppCompatActivity {
             Intent intent = new Intent(this,ToastLayoutActivity.class);
             intent.putExtra("username",username);
             startActivity(intent);
+
+            if(cbAutoLogin.isChecked()) {
+                if (SPUtil.saveAccount(this,username,password));
+                Toast.makeText(LoginLayoutActivity.this,"存储且登陆成功",Toast.LENGTH_LONG).show();
+            } else {
+                SPUtil.clear(this);
+            }
         } else {
             Toast.makeText(this,"用户名或密码不正确",Toast.LENGTH_LONG).show();
         }
